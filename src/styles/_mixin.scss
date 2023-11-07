@@ -1,0 +1,64 @@
+@mixin button-size($padding-x, $padding-y, $font-size, $border-radius) {
+  padding: $padding-y $padding-x;
+  font-size: $font-size;
+  border-radius: $border-radius;
+}
+
+@mixin button-style(
+  $background,
+  $color,
+  $mimic-type: outset,
+  $hover-background: lighten($background, 7.5%),
+  $hover-color: lighten($color, 10%)
+) {
+  color: $color;
+  background: $background;
+  @include mimic($background, 3px, 7px, $mimic-type);
+
+  &:hover{
+    color: $hover-color;
+    background: $hover-background;
+  }
+  
+  &:active{
+    box-shadow: none;
+  }
+}
+
+@mixin mimic(
+  $background,
+  $shadow-width,
+  $shadow-blur,
+  $inset: outset
+) {
+  @if $inset == outset {
+    box-shadow: 
+      (-$shadow-width) (-$shadow-width) $shadow-blur lighten($background, 20%),
+      $shadow-width $shadow-width $shadow-blur darken($background, 20%);
+  } @else if $inset == inset {
+    box-shadow: 
+      inset (-$shadow-width) (-$shadow-width) $shadow-blur lighten($background, 20%),
+      inset $shadow-width $shadow-width $shadow-blur darken($background, 20%);
+  } @else {
+    box-shadow: none;
+  }
+}
+// 字体的mimic
+@mixin mimic-text(
+  $background,
+  $shadow-width,
+  $shadow-blur,
+  $inset: outset
+) {
+  @if $inset == outset {
+    text-shadow: 
+      (-$shadow-width) (-$shadow-width) $shadow-blur lighten($background, 20%),
+      $shadow-width $shadow-width $shadow-blur darken($background, 20%);
+  } @else if $inset == inset {
+    text-shadow: 
+      inset (-$shadow-width) (-$shadow-width) $shadow-blur lighten($background, 20%),
+      inset $shadow-width $shadow-width $shadow-blur darken($background, 20%);
+  } @else {
+    text-shadow: none;
+  }
+}

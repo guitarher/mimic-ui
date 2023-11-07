@@ -1,0 +1,8 @@
+// {
+//   "editor.formatOnSave": true,
+//   // 默认格式化程序
+//   "editor.defaultFormatter": "esbenp.prettier-vscode",
+//   "editor.formatOnSaveMode": "modifications",
+//   "cSpell.words": ["guitarher", "iife"],
+//   "liveServer.settings.port": 5501
+// }
