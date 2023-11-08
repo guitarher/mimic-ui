@@ -15,28 +15,23 @@
   background: $background;
   @include mimic($background, 3px, 7px, $mimic-type);
 
-  &:hover{
+  &:hover {
     color: $hover-color;
     background: $hover-background;
   }
-  
-  &:active{
+
+  &:active {
     box-shadow: none;
   }
 }
 
-@mixin mimic(
-  $background,
-  $shadow-width,
-  $shadow-blur,
-  $inset: outset
-) {
+@mixin mimic($background, $shadow-width, $shadow-blur, $inset: outset) {
   @if $inset == outset {
-    box-shadow: 
+    box-shadow:
       (-$shadow-width) (-$shadow-width) $shadow-blur lighten($background, 20%),
       $shadow-width $shadow-width $shadow-blur darken($background, 20%);
   } @else if $inset == inset {
-    box-shadow: 
+    box-shadow:
       inset (-$shadow-width) (-$shadow-width) $shadow-blur lighten($background, 20%),
       inset $shadow-width $shadow-width $shadow-blur darken($background, 20%);
   } @else {
@@ -44,18 +39,13 @@
   }
 }
 // 字体的mimic
-@mixin mimic-text(
-  $background,
-  $shadow-width,
-  $shadow-blur,
-  $inset: outset
-) {
+@mixin mimic-text($background, $shadow-width, $shadow-blur, $inset: outset) {
   @if $inset == outset {
-    text-shadow: 
+    text-shadow:
       (-$shadow-width) (-$shadow-width) $shadow-blur lighten($background, 20%),
       $shadow-width $shadow-width $shadow-blur darken($background, 20%);
   } @else if $inset == inset {
-    text-shadow: 
+    text-shadow:
       inset (-$shadow-width) (-$shadow-width) $shadow-blur lighten($background, 20%),
       inset $shadow-width $shadow-width $shadow-blur darken($background, 20%);
   } @else {

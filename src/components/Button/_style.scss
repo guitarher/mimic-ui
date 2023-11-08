@@ -11,7 +11,8 @@
   @include button-style($white, $body-color);
   cursor: pointer;
   transition: $btn-transition;
-  &.disabled, &[disabled] {
+  &.disabled,
+  &[disabled] {
     cursor: not-allowed;
     opacity: $btn-disabled-opacity;
     box-shadow: none;
@@ -22,63 +23,66 @@
   margin: $btn-margin;
 }
 
-.btn-sm{
+.btn-sm {
   @include button-size($btn-padding-x-sm, $btn-padding-y-sm, $btn-font-size-sm, $border-radius-sm);
 }
 
-.btn-lg{
+.btn-lg {
   @include button-size($btn-padding-x-lg, $btn-padding-y-lg, $btn-font-size-lg, $border-radius-lg);
 }
 
 // primary
 .btn-primary-outset {
-  @include button-style($primary, $white)
+  @include button-style($primary, $white);
 }
 .btn-primary-inset {
-  @include button-style($primary, $white, inset)
+  @include button-style($primary, $white, inset);
 }
 .btn-primary-none {
-  @include button-style($primary, $white, none)
+  @include button-style($primary, $white, none);
 }
 
 // danger
 .btn-danger-outset {
-  @include button-style($danger, $white)
+  @include button-style($danger, $white);
 }
 .btn-danger-inset {
-  @include button-style($danger, $white, inset)
+  @include button-style($danger, $white, inset);
 }
 .btn-danger-none {
-  @include button-style($danger, $white, none)
+  @include button-style($danger, $white, none);
 }
 
 // success
 .btn-success-outset {
-  @include button-style($green, $white)
+  @include button-style($green, $white);
 }
 .btn-success-inset {
-  @include button-style($green, $white, inset)
+  @include button-style($green, $white, inset);
 }
 .btn-success-none {
-  @include button-style($green, $white, none)
+  @include button-style($green, $white, none);
 }
 
 // default
 .btn-default-outset {
-  @include button-style($white, $gray-900)
+  @include button-style($white, $gray-900);
 }
 .btn-default-inset {
-  @include button-style($white, $gray-900, inset)
+  @include button-style($white, $gray-900, inset);
 }
 .btn-default-none {
-  @include button-style($white, $gray-900, none)
+  @include button-style($white, $gray-900, none);
 }
 
 // link
-.btn-link-outset, .btn-link-inset, .btn-link-none {
+.btn-link-outset,
+.btn-link-inset,
+.btn-link-none {
   @include button-style(transparent, $btn-link-color);
   font-weight: $font-weight-normal;
-  &.disabled, &[disabled] {
+  &.disabled,
+  &[disabled] {
     cursor: not-allowed;
     color: $btn-link-disabled-color;
     box-shadow: none;
