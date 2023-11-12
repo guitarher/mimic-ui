@@ -1,4 +1,8 @@
-// {
+{
+  "cSpell.words": [
+    "testid"
+  ]
+} // {
 //   "editor.formatOnSave": true,
 //   // 默认格式化程序
 //   "editor.defaultFormatter": "esbenp.prettier-vscode",
