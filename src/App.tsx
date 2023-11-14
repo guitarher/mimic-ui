@@ -1,5 +1,5 @@
 import Button, { ButtonSize, ButtonType, MimicType } from './components/Button'
-import { Menu, MenuItem } from './components/Menu'
+import { Menu, MenuItem, SubMenu } from './components/Menu'
 
 import './App.css'
 
@@ -42,11 +42,12 @@ function App() {
             alert(i)
           }}
         >
-          <MenuItem index={0}>Link1</MenuItem>
-          <MenuItem index={1} disabled>
-            Link2
-          </MenuItem>
-          <MenuItem index={2}>Link3</MenuItem>
+          <MenuItem>Link1</MenuItem>
+          <MenuItem disabled>Link2</MenuItem>
+          <SubMenu title="dropdown">
+            <MenuItem>dropdown1</MenuItem>
+            <MenuItem>dropdown2</MenuItem>
+          </SubMenu>
         </Menu>
 
         <h1>Menu Component Vertical</h1>
@@ -55,12 +56,15 @@ function App() {
             alert(i)
           }}
           mode="vertical"
+          defaultOpenKeys={['3']}
         >
-          <MenuItem index={0}>Link1</MenuItem>
-          <MenuItem index={1} disabled>
-            Link2
-          </MenuItem>
-          <MenuItem index={2}>Link3</MenuItem>
+          <MenuItem>Link1</MenuItem>
+          <MenuItem disabled>Link2</MenuItem>
+          <MenuItem>Link3</MenuItem>
+          <SubMenu title="dropdown">
+            <MenuItem>dropdown1</MenuItem>
+            <MenuItem>dropdown2</MenuItem>
+          </SubMenu>
         </Menu>
       </>
     </div>
