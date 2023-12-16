@@ -20,6 +20,9 @@ export enum MimicType {
   Inset = 'inset'
 }
 
+// 按钮形状
+export type ButtonShape = 'default' | 'circle'
+
 export type ButtonProps = BaseButtonProps & React.ButtonHTMLAttributes<HTMLElement>
 
 export interface BaseButtonProps {
@@ -28,5 +31,6 @@ export interface BaseButtonProps {
   size?: ButtonSize
   btnType?: ButtonType
   mimicType?: MimicType
+  shape?: ButtonShape
   children: React.ReactNode
 }
